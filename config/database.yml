@@ -83,3 +83,12 @@ production:
   database: olympics_production
   username: olympics
   password: <%= ENV['OLYMPICS_DATABASE_PASSWORD'] %>
+
+# production:
+#   <<: *default
+#   pool: 5
+#   timeout: 5000
+#   username: olympics
+#   password: olympics
+#   database: olympics_development
+#   host: /cloud/...
