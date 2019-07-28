@@ -1,8 +1,8 @@
 namespace :import do
   desc "rake import data from raw file"
-  task raw: :environment do
+  task medals: :environment do
     require "csv"
-    CSV.foreach('db/data/raw_data.csv', headers: true) do |row|
+    CSV.foreach('db/data/medals.csv', headers: true) do |row|
       Medal.create(row.to_hash)
     end
   end
