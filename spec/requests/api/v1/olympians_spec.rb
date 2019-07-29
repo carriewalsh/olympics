@@ -63,5 +63,15 @@ describe "As a visitor" do
       expect(body[:olympians].count).to eq(1)
       expect(body[:olympians].first[:name]).to eq("Name 1")
     end
+
+    it "returns the athletes matching age query" do
+      get "/api/v1/olympians?age=18"
+      expect(response.status).to eq(200)
+
+      body = JSON.parse(response.body, symbolize_names: true)
+      expect(body[:olympians].class).to eq(Array)
+      expect(body[:olympians].count).to eq(1)
+      expect(body[:olympians].first[:name]).to eq("Name 1")
+    end
   end
 end
