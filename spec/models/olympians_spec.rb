@@ -47,7 +47,7 @@ RSpec.describe Olympian, type: :model do
 
     describe "average_m_height" do
       it "should return the average male height" do
-        expect(Olympian.average_m_height).to eq(155.0)
+        expect(Olympian.average_m_height).to eq(165.0)
       end
     end
 
@@ -69,7 +69,7 @@ RSpec.describe Olympian, type: :model do
                       },
                       "average_height": {
                         "unit": "cm",
-                        "male_olympians": 155.0,
+                        "male_olympians": 165.0,
                         "female_olympians": 145.0
                       },
                       "average_age": 26.0
