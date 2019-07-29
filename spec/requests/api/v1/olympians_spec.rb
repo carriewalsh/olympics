@@ -34,27 +34,27 @@ describe "As a visitor" do
                     "average_age": 26.0
                   }
                 }
-  //Response Format
-  {
-    "olympians":
-      [
-        {
-          "name": "Maha Abdalsalam",
-          "team": "Egypt",
-          "age": 18,
-          "sport": "Diving"
-          "total_medals_won": 0
-        },
-        {
-          "name": "Ahmad Abughaush",
-          "team": "Jordan",
-          "age": 20,
-          "sport": "Taekwondo"
-          "total_medals_won": 1
-        },
-        {...}
-      ]
-  }
+  # //Response Format
+  # {
+  #   "olympians":
+  #     [
+  #       {
+  #         "name": "Maha Abdalsalam",
+  #         "team": "Egypt",
+  #         "age": 18,
+  #         "sport": "Diving"
+  #         "total_medals_won": 0
+  #       },
+  #       {
+  #         "name": "Ahmad Abughaush",
+  #         "team": "Jordan",
+  #         "age": 20,
+  #         "sport": "Taekwondo"
+  #         "total_medals_won": 1
+  #       },
+  #       {...}
+  #     ]
+  # }
 
 
     end

@@ -51,4 +51,12 @@ class Olympian < ApplicationRecord
       }
     }
   end
+
+  def sport
+    events.first.sport.name
+  end
+
+  def medals_won
+    olympian_events.where("medal_id IS NOT NULL").count
+  end
 end
