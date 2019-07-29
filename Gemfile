@@ -21,6 +21,9 @@ gem 'csv'
 gem 'awesome_print'
 gem 'rspec-pride'
 
+gem 'appengine'
+gem 'stackdriver'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
