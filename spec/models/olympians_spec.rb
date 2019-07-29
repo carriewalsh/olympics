@@ -126,5 +126,19 @@ RSpec.describe Olympian, type: :model do
         expect(@o1.medals_won).to eq(2)
       end
     end
+
+    describe "summary" do
+      it "returns the summary for the olympian" do
+        output = {
+          "name": "Name 1",
+          "team": "USA",
+          "age": 18,
+          "sport": "Taekwondo",
+          "total_medals_won": 2
+        }
+
+        expect(@o1.summary).to eq(output)
+      end
+    end
   end
 end

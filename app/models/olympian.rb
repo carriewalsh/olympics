@@ -26,7 +26,6 @@ class Olympian < ApplicationRecord
 
   def self.average_m_height
     Olympian.where(sex: "M").average(:height).round(1)
-
   end
 
   def self.total_olympians
@@ -52,11 +51,30 @@ class Olympian < ApplicationRecord
     }
   end
 
+  # def self.list_olympians do
+  #   olympians = Olympians.map do |olympian|
+  #     olympian.summary
+  #   end
+  #   {
+  #     "olympians": olympians
+  #   }
+  # end
+
   def sport
     events.first.sport.name
   end
 
   def medals_won
     olympian_events.where("medal_id IS NOT NULL").count
+  end
+
+  def summary
+    {
+      "name": name,
+      "team": team.name,
+      "age": age,
+      "sport": sport,
+      "total_medals_won": medals_won
+    }
   end
 end
