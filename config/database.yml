@@ -91,4 +91,4 @@ production:
   username: olympics-final
   password: olympics-final
   database: olympics-production
-  host: /cloud/olympics-final:us-west2:olympics-final
+  host: /cloudsql/olympics-final:us-west2:olympics-final
