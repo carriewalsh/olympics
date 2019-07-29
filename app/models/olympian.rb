@@ -51,14 +51,14 @@ class Olympian < ApplicationRecord
     }
   end
 
-  # def self.list_olympians do
-  #   olympians = Olympians.map do |olympian|
-  #     olympian.summary
-  #   end
-  #   {
-  #     "olympians": olympians
-  #   }
-  # end
+  def self.list_olympians
+    olympians = Olympian.all.map do |olympian|
+      olympian.summary
+    end
+    {
+      "olympians": olympians
+    }
+  end
 
   def sport
     events.first.sport.name
