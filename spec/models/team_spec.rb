@@ -7,6 +7,6 @@ RSpec.describe Team, type: :model do
   end
 
   describe "relationships" do
-    it { should belong_to have_many :olympians }
+    it { should have_many :olympians }
   end
 end

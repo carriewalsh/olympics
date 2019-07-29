@@ -8,6 +8,6 @@ RSpec.describe Olympian, type: :model do
 
   describe "relationships" do
     it { should belong_to :team }
-    it { should belong_to have_many :events, through: :olympian_events }
+    it { should have_many :events }
   end
 end
