@@ -88,7 +88,7 @@ production:
   <<: *default
   pool: 5
   timeout: 5000
-  username: olympics-final
+  username: postgres
   password: olympics-final
   database: olympics-production
   host: /cloudsql/olympics-final:us-west2:olympics-final
