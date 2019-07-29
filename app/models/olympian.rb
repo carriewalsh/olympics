@@ -35,20 +35,20 @@ class Olympian < ApplicationRecord
 
   def self.stats
     {
-                "olympian_stats": {
-                  "total_competing_olympians": self.total_olympians,
-                  "average_weight": {
-                    "unit": "kg",
-                    "male_olympians": self.average_m_weight,
-                    "female_olympians": self.average_f_weight
-                  },
-                  "average_height": {
-                    "unit": "cm",
-                    "male_olympians": self.average_m_height,
-                    "female_olympians": self.average_f_height
-                  },
-                  "average_age": self.average_age
-                }
-              }
+      "olympian_stats": {
+        "total_competing_olympians": self.total_olympians,
+        "average_weight": {
+          "unit": "kg",
+          "male_olympians": self.average_m_weight,
+          "female_olympians": self.average_f_weight
+        },
+        "average_height": {
+          "unit": "cm",
+          "male_olympians": self.average_m_height,
+          "female_olympians": self.average_f_height
+        },
+        "average_age": self.average_age
+      }
+    }
   end
 end
