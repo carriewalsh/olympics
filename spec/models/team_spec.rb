@@ -1,14 +1,12 @@
 require "rails_helper"
 
-RSpec.describe Olympian, type: :model do
+RSpec.describe Team, type: :model do
   describe "validations" do
     it { should validate_presence_of :name }
     it { should validate_uniqueness_of :name }
-    it { should validate_presence_of :age }
   end
 
   describe "relationships" do
-    it { should belong_to :team }
-    # it { should belong_to have_many :events }
+    it { should belong_to have_many :olympians }
   end
 end
