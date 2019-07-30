@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       get '/popularity', to: 'popularity#index'
 
       resources :events, only: [:index, :show]
-
+      get :teams, to: 'teams#index'
     end
   end
 end
