@@ -7,7 +7,7 @@ RSpec.describe OlympianEvent, type: :model do
   end
 
   describe "instance methods" do
-    describe "summary" do
+    describe "medal_summary" do
       it "returns the summary of a medalist" do
         OlympianEvent.destroy_all
         Event.destroy_all
@@ -29,7 +29,7 @@ RSpec.describe OlympianEvent, type: :model do
           "medal": "Gold"
         }
 
-        expect(oe1.summary).to eq(output)
+        expect(oe1.medal_summary).to eq(output)
       end
     end
   end
