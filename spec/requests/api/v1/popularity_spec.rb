@@ -36,7 +36,7 @@ RSpec.describe "As a visitor" do
       expect(response.status).to eq(200)
 
       body = JSON.parse(response.body, symbolize_names: true)
-      binding.pry
+
       expect(body).to eq(output)
     end
   end
