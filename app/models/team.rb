@@ -35,6 +35,6 @@ class Team < ApplicationRecord
   end
 
   def percentage_wins
-    ((medal_event_count / total_event_count)*100.0).round(1)
+    ((medal_event_count.to_f / total_event_count)*100).round(1)
   end
 end

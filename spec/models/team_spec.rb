@@ -93,8 +93,8 @@ RSpec.describe Team, type: :model do
     end
 
     describe "percentage_wins" do
-      it "returns the count of events medaled in by a country's olympians" do
-        expect(@team.medal_event_count).to eq(2)
+      it "returns the percentage of wins by a country's olympians" do
+        expect(@team.percentage_wins).to eq(66.7)
       end
     end
   end
