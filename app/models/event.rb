@@ -15,4 +15,19 @@ class Event < ApplicationRecord
     }
 
   end
+
+  def self.popularity
+    by_id = OlympianEvent.group(:event_id).count
+    by_name = []
+    by_id.map do |id,count|
+      output = {
+        "event": Event.find(id).name,
+        "olympians":count
+      }
+      by_name << output
+    end
+    {
+      "popularity": by_name
+    }
+  end
 end
