@@ -17,6 +17,19 @@ class Team < ApplicationRecord
     }
   end
 
+  def self.list_percentages
+    teams = Team.all.map do |team|
+      percent = team.percentage_wins
+      {
+        "team": team.name,
+        "percentage_medals": percent
+      }
+    end
+    {
+      "teams": teams
+    }
+  end
+
   def medalists
     # medalist_ids = olympians.joins(:olympian_events).where("olympian_events.medal_id IS NOT NULL").pluck(:id)
     # oes = OlympianEvent.where(id: medalist_ids).where("olympian_events.medal_id IS NOT NULL")
