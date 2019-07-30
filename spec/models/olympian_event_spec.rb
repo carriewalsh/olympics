@@ -26,13 +26,15 @@ RSpec.describe OlympianEvent, type: :model do
           "name": "Name 1",
           "team": "USA",
           "age": 18,
-          "medal": "Gold"
+          "medal": "Gold",
+          "medal_url": "asdf"
         }
         output2 = {
           "name": "Name 1",
           "age": 18,
           "event": "t1",
-          "medal": "Gold"
+          "medal": "Gold",
+          "medal_url": "asdf"
         }
 
         expect(oe1.medal_summary("team")).to eq(output1)
