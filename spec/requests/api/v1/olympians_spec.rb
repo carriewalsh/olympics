@@ -1,7 +1,5 @@
 require "rails_helper"
 
-
-
 describe "As a visitor" do
   describe "when I reach olympians" do
     before :each do
