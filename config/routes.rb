@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get '/events/:id/medalists', to: 'event_medalists#index'
 
       get '/popularity', to: 'popularity#index'
+      get '/percentage_wins', to: 'percentage_wins#index'
 
       resources :events, only: [:index, :show]
       get :teams, to: 'teams#index'

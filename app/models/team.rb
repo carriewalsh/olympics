@@ -17,12 +17,37 @@ class Team < ApplicationRecord
     }
   end
 
-  def medalists
-    medalist_ids = olympians.joins(:olympian_events).where("olympian_events.medal_id IS NOT NULL").pluck(:id)
-    oes = OlympianEvent.where(id: medalist_ids).where("olympian_events.medal_id IS NOT NULL")
-    summary = []
-    medalists.each do |medalist|
-      summary << medalist.olympian_events.medal_summary("event")
+  def self.list_percentages
+    teams = Team.all.map do |team|
+      percent = team.percentage_wins
+      {
+        "team": team.name,
+        "percentage_medals": percent
+      }
     end
+    {
+      "teams": teams
+    }
+  end
+
+  def medalists
+    # medalist_ids = olympians.joins(:olympian_events).where("olympian_events.medal_id IS NOT NULL").pluck(:id)
+    # oes = OlympianEvent.where(id: medalist_ids).where("olympian_events.medal_id IS NOT NULL")
+    # summary = []
+    # medalists.each do |medalist|
+    #   summary << medalist.olympian_events.medal_summary("event")
+    # end
+  end
+
+  def total_event_count
+    olympians.joins(:events).count
+  end
+
+  def medal_event_count
+    olympians.joins(:olympian_events).where("medal_id IS NOT NULL").count
+  end
+
+  def percentage_wins
+    ((medal_event_count.to_f / total_event_count)*100).round(1)
   end
 end
