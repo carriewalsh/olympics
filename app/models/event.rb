@@ -17,12 +17,12 @@ class Event < ApplicationRecord
   end
 
   def self.popularity
-    by_id = OlympianEvent.group(:event_id).count
+    by_id = OlympianEvent.select("event_id, count(event_id) AS count").group(:event_id).order("count":"desc")
     by_name = []
-    by_id.map do |id,count|
+    by_id.map do |oe|
       output = {
-        "event": Event.find(id).name,
-        "olympians":count
+        "event": Event.find(oe.event_id).name,
+        "olympians":oe.count
       }
       by_name << output
     end
