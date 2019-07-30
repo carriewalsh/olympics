@@ -10,14 +10,16 @@ class OlympianEvent < ApplicationRecord
         "name": olympian.name,
         "team": olympian.team.name,
         "age": olympian.age,
-        "medal": medal.name
+        "medal": medal.name,
+        "medal_url": medal.icon
       }
     elsif return_val == "event"
       {
         "name": olympian.name,
         "age": olympian.age,
         "event": event.name,
-        "medal": medal.name
+        "medal": medal.name,
+        "medal_url": medal.icon
       }
     end
   end

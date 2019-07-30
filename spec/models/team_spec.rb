@@ -96,13 +96,15 @@ RSpec.describe Team, type: :model do
           "name": "Name 1",
           "age": 18,
           "event": "t1",
-          "medal": "Gold"
+          "medal": "Gold",
+          "medal_url": "asdf"
         }
         output2 = {
           "name": "Name 2",
           "age": 18,
           "event": "t1",
-          "medal": "Silver"
+          "medal": "Silver",
+          "medal_url": "asdf"
         }
         expect(@team.medalists[:medalists].first).to eq(output1)
         expect(@team.medalists[:medalists].last).to eq(output2)
