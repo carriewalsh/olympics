@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
       get '/olympians', to: 'olympians#index'
 
-      get '/events', to: 'events#index'
+      resources :events, only: [:index, :show]
     end
   end
 end
