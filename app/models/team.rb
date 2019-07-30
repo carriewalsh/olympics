@@ -33,4 +33,8 @@ class Team < ApplicationRecord
   def medal_event_count
     olympians.joins(:olympian_events).where("medal_id IS NOT NULL").count
   end
+
+  def percentage_wins
+    ((medal_event_count / total_event_count)*100.0).round(1)
+  end
 end
