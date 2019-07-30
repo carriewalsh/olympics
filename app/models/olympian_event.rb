@@ -3,13 +3,22 @@ class OlympianEvent < ApplicationRecord
   belongs_to :event
 
 
-  def medal_summary
+  def medal_summary(return_val)
     medal = Medal.find(medal_id)
-    {
-      "name": olympian.name,
-      "team": olympian.team.name,
-      "age": olympian.age,
-      "medal": medal.name
-    }
+    if return_val == "team"
+      {
+        "name": olympian.name,
+        "team": olympian.team.name,
+        "age": olympian.age,
+        "medal": medal.name
+      }
+    elsif return_val == "event"
+      {
+        "name": olympian.name,
+        "age": olympian.age,
+        "event": event.name,
+        "medal": medal.name
+      }
+    end
   end
 end

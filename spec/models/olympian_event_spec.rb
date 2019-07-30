@@ -7,8 +7,8 @@ RSpec.describe OlympianEvent, type: :model do
   end
 
   describe "instance methods" do
-    describe "medal_summary" do
-      it "returns the summary of a medalist" do
+    describe "medal_summary(return_val)" do
+      it "returns the summary of a medalist with the team name or event name" do
         OlympianEvent.destroy_all
         Event.destroy_all
         Olympian.destroy_all
@@ -22,14 +22,21 @@ RSpec.describe OlympianEvent, type: :model do
         gold = Medal.create(name: "Gold", icon: "asdf")
         oe1 = OlympianEvent.create(olympian_id: o1.id, event_id: event1.id, medal_id: gold.id)
 
-        output = {
+        output1 = {
           "name": "Name 1",
           "team": "USA",
           "age": 18,
           "medal": "Gold"
         }
+        output2 = {
+          "name": "Name 1",
+          "age": 18,
+          "event": "t1",
+          "medal": "Gold"
+        }
 
-        expect(oe1.medal_summary).to eq(output)
+        expect(oe1.medal_summary("team")).to eq(output1)
+        expect(oe1.medal_summary("event")).to eq(output2)
       end
     end
   end
