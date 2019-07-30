@@ -34,10 +34,13 @@ class Team < ApplicationRecord
     oe = []
     olys = olympians.joins(:olympian_events).where("olympian_events.medal_id IS NOT NULL")
     olys.each do |olympian|
-      oe << olympian.olympian_events
+      oe << olympian.olympian_events.where("olympian_events.medal_id IS NOT NULL")
     end
     oe.flatten!
-    summary = {"medalists":[]}
+    summary = {
+      "team": self.name,
+      "medalists":[]
+    }
     oe.each do |event|
       summary[:medalists] << event.medal_summary("event")
     end
