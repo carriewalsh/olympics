@@ -8,7 +8,7 @@ class Event < ApplicationRecord
 
   def medalists
     medalists = olympian_events.where("medal_id IS NOT NULL").order(:medal_id)
-    ordered_medalists = medalists.map {|oe| oe.medal_summary}
+    ordered_medalists = medalists.map {|oe| oe.medal_summary("team")}
     {
       "event": self.name,
       "medalists": ordered_medalists

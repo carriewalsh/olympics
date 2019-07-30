@@ -16,4 +16,13 @@ class Team < ApplicationRecord
       "teams": teams
     }
   end
+
+  def medalists
+    medalist_ids = olympians.joins(:olympian_events).where("olympian_events.medal_id IS NOT NULL").pluck(:id)
+    oes = OlympianEvent.where(id: medalist_ids).where("olympian_events.medal_id IS NOT NULL")
+    summary = []
+    medalists.each do |medalist|
+      summary << medalist.olympian_events.medal_summary("event")
+    end
+  end
 end
