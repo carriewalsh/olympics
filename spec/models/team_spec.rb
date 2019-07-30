@@ -90,7 +90,7 @@ RSpec.describe Team, type: :model do
 
     end
     describe "medalists" do
-      xit "returns the medalist summaries for a team" do
+      it "returns the medalist summaries for a team" do
 
         output1 = {
           "name": "Name 1",
@@ -104,7 +104,6 @@ RSpec.describe Team, type: :model do
           "event": "t1",
           "medal": "Silver"
         }
-
         expect(@team.medalists[:medalists].first).to eq(output1)
         expect(@team.medalists[:medalists].last).to eq(output2)
       end

@@ -5,7 +5,11 @@ require "rails_helper"
 describe "As a visitor" do
   describe "when I reach olympian_stats" do
     it "returns the stats for that game's olympians" do
+      OlympianEvent.destroy_all
+      Event.destroy_all
       Olympian.destroy_all
+      Sport.destroy_all
+      Medal.destroy_all
       Team.destroy_all
       @team = Team.create!(name: "USA")
       @o1 = @team.olympians.create(name: "Name 1", sex: "F", age: 18, weight: 80, height: 140)
