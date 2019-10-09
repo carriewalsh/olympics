@@ -1,7 +1,7 @@
 # Olympics - Final Individual Project
 by Carrie Walsh
 
-Deployed site: https://olympics-final.appspot.com
+Deployed site: https://olympics-final.appspot.com - now closed
 
 This app is an API for a large set of Olympics data from Summer 2016. Its intended purpose is to be adapted as a live Olympics website for Summer 2020. Examples of return values include summaries of all olympians, olympians by team, olympic stats, summary of medalists by event, and summary of medalists by team. Summaries of medals also return the link to the medal image for frontend ease.
 
